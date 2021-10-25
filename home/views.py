@@ -54,7 +54,7 @@ def contact(request):
             name : name, email : email, phone : phone, desc : desc, "date": datetime.today()
         }
         collection_name.insert_one(contact)
-        print(contact)
+        #print(contact)
         messages.success(request, 'Your message has been sent!')
     return render(request, 'contact.html')
 
