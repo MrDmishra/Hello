@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Hello.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+            'NAME': 'your-db-name',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': 'mongodb://127.0.0.1:27017/Contact?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
+            }  
     }
 }
 
